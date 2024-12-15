@@ -237,6 +237,37 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     " || handle_error "Failed to append 'wdm' to user emails and usernames"
 
     echo "Successfully appended 'wdm' to user emails and usernames where necessary."
+    
+    # Backup plugins, themes, and database
+    echo "Creating a backup of plugins, themes, and database..."
+    BACKUP_DIR="$WP_DIR/TechOps_Backups"
+    mkdir -p "$BACKUP_DIR"
+##########################################################
+
+    # Backup plugins
+    echo "Backing up plugins..."
+    PLUGIN_BACKUP_FILE="$BACKUP_DIR/plugins_backup_$(date +"%Y%m%d%H%M%S").zip"
+    zip -r "$PLUGIN_BACKUP_FILE" wp-content/plugins > /dev/null || { echo "Failed to backup plugins."; exit 1; }
+    echo "Plugins backup saved to: $PLUGIN_BACKUP_FILE"
+
+    # Backup themes
+    echo "Backing up themes..."
+    THEME_BACKUP_FILE="$BACKUP_DIR/themes_backup_$(date +"%Y%m%d%H%M%S").zip"
+    zip -r "$THEME_BACKUP_FILE" wp-content/themes > /dev/null || { echo "Failed to backup themes."; exit 1; }
+    echo "Themes backup saved to: $THEME_BACKUP_FILE"
+
+    # Backup database
+    echo "Backing up database..."
+    DB_BACKUP_FILE="$BACKUP_DIR/db_backup_$(date +"%Y%m%d%H%M%S").sql"
+    if wp db export "$DB_BACKUP_FILE"; then
+        echo "Database backup saved to: $DB_BACKUP_FILE"
+    else
+        echo "Failed to backup database."; exit 1;
+    fi
+
+    echo "All backups completed successfully in: $BACKUP_DIR"
+    
+##########################################################
 
     # Step 13: Dry run update of plugins and themes with exceptions for failed plugins
     echo "Dry run update of all plugins..."
