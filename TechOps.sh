@@ -20,12 +20,14 @@ extract_parameters() {
     LIVE_PORT=$(read_from_xml "$PARAM_FILE" "live" "port")
     LIVE_USER=$(read_from_xml "$PARAM_FILE" "live" "user")
     LIVE_URL=$(read_from_xml "$PARAM_FILE" "live" "url")
+    LIVE_PASSWORD=$(read_from_xml "$PARAM_FILE" "live" "password")
 
     # Extract staging configuration
     STAGING_HOST=$(read_from_xml "$PARAM_FILE" "staging" "host")
     STAGING_PORT=$(read_from_xml "$PARAM_FILE" "staging" "port")
     STAGING_USER=$(read_from_xml "$PARAM_FILE" "staging" "user")
     STAGING_URL=$(read_from_xml "$PARAM_FILE" "staging" "url")
+    STAGING_PASSWORD=$(read_from_xml "$PARAM_FILE" "staging" "password")
 
     # Export variables to make them globally accessible
     export LIVE_HOST LIVE_PORT LIVE_USER LIVE_URL
@@ -49,7 +51,7 @@ echo "STAGING_URL=$STAGING_URL"
 
 # Step 3: Log into the staging server first to determine the WP directory
 echo "Logging into the staging server ($STAGING_HOST) to find the WordPress directory..."
-STAGING_WP_DIR=$(ssh -q  -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HOST" bash -s << "SSH_COMMANDS" 2>/dev/null
+STAGING_WP_DIR=$(sshpass -p "$STAGING_PASSWORD" ssh -q -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HOST" bash -s << "SSH_COMMANDS" 2>/dev/null
     # Function to find the WordPress root directory on the staging server
     find_wordpress_dir() {
         wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
@@ -77,9 +79,10 @@ fi
 
 echo "Staging WordPress directory is: $STAGING_WP_DIR" 2>/dev/null
 
+
 # Step 4: Log into the live server using SSH
 echo "Logging into the live server ($LIVE_HOST) using SSH..."
-ssh -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash -s -- "$LIVE_URL" "$STAGING_PORT" "$STAGING_HOST" "$STAGING_USER" "$STAGING_WP_DIR" << "SSH_COMMANDS"
+sshpass -p "$STAGING_PASSWORD" ssh -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash -s -- "$LIVE_URL" "$STAGING_PORT" "$STAGING_HOST" "$STAGING_USER" "$STAGING_WP_DIR" << "SSH_COMMANDS"
     LIVE_URL="$1"  # Pass LIVE_URL dynamically from the script
     STAGING_PORT="$2"
     STAGING_HOST="$3"
@@ -154,7 +157,7 @@ SSH_COMMANDS
 
 # Step 9: Log into the staging server via SSH again to complete remaining tasks
 echo "Logging into the staging server ($STAGING_HOST) to perform tasks..."
-ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HOST" bash -s -- "$STAGING_URL" << "SSH_COMMANDS"
+sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HOST" bash -s -- "$STAGING_URL" << "SSH_COMMANDS"
     STAGING_URL="$1"  # Pass STAGING_URL dynamically from the script
 
     echo "Logged into the staging server successfully."
