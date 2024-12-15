@@ -1,71 +1,41 @@
 #!/bin/bash
 
-# Step 1: Function to read parameters from a xml file
-read_from_xml() {
-    local file="$1"
-    local section="$2"
-    local key="$3"
-    
-    # Use xmllint to extract the value of the given key under the specified section
-    xmllint --xpath "string(//serverConfigurations/$section/$key)" "$file"
-}
+# Graffiti or Welcome Graphics
+cat << "EOF"
+================================================================================================
+         			WELCOME TO WISDMLABS TECHOPS                     
+================================================================================================
+ __        ___         _           _          _           _____         _      ___            
+ \ \      / (_)___  __| |_ __ ___ | |    __ _| |__  ___  |_   _|__  ___| |__  / _ \ _ __  ___ 
+  \ \ /\ / /| / __|/ _` | '_ ` _ \| |   / _` | '_ \/ __|   | |/ _ \/ __| '_ \| | | | '_ \/ __|
+   \ V  V / | \__ \ (_| | | | | | | |__| (_| | |_) \__ \   | |  __/ (__| | | | |_| | |_) \__ \
+    \_/\_/  |_|___/\__,_|_| |_| |_|_____\__,_|_.__/|___/   |_|\___|\___|_| |_|\___/| .__/|___/
+                                                                                   |_|        
+================================================================================================
+EOF
 
-# Path to the XML file containing parameters
-PARAM_FILE="credentials.xml"
 
-# Function to extract parameters
-extract_parameters() {
-    # Extract live configuration
-    LIVE_HOST=$(read_from_xml "$PARAM_FILE" "live" "host")
-    LIVE_PORT=$(read_from_xml "$PARAM_FILE" "live" "port")
-    LIVE_USER=$(read_from_xml "$PARAM_FILE" "live" "user")
-    LIVE_URL=$(read_from_xml "$PARAM_FILE" "live" "url")
-    LIVE_PASSWORD=$(read_from_xml "$PARAM_FILE" "live" "password")
 
-    # Extract staging configuration
-    STAGING_HOST=$(read_from_xml "$PARAM_FILE" "staging" "host")
-    STAGING_PORT=$(read_from_xml "$PARAM_FILE" "staging" "port")
-    STAGING_USER=$(read_from_xml "$PARAM_FILE" "staging" "user")
-    STAGING_URL=$(read_from_xml "$PARAM_FILE" "staging" "url")
-    STAGING_PASSWORD=$(read_from_xml "$PARAM_FILE" "staging" "password")
 
-    # Export variables to make them globally accessible
-    export LIVE_HOST LIVE_PORT LIVE_USER LIVE_URL
-    export STAGING_HOST STAGING_PORT STAGING_USER STAGING_URL
-}
-
-# Extract SSH credentials and URLs from the XML file
-extract_parameters 2>/dev/null
-
-# Step 2: Validate extracted parameters
-if [[ -z "$LIVE_HOST" || -z "$STAGING_HOST" || -z "$LIVE_URL" || -z "$STAGING_URL" ]]; then
-    echo "Error: Missing required parameters in the xml file."
-    exit 1
-fi
-
-echo "All parameters read successfully:"
-echo "LIVE_HOST=$LIVE_HOST"
-echo "STAGING_HOST=$STAGING_HOST"
-echo "LIVE_URL=$LIVE_URL"
-echo "STAGING_URL=$STAGING_URL"
+clone_live() {
 
 # Step 3: Log into the staging server first to determine the WP directory
 echo "Logging into the staging server ($STAGING_HOST) to find the WordPress directory..."
 STAGING_WP_DIR=$(sshpass -p "$STAGING_PASSWORD" ssh -q -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HOST" bash -s << "SSH_COMMANDS" 2>/dev/null
     # Function to find the WordPress root directory on the staging server
     find_wordpress_dir() {
-        wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
-        if [[ -d "$wp_dir/wp-content" && -d "$wp_dir/wp-includes" && -f "$wp_dir/wp-config.php" ]]; then
-            echo "$wp_dir"
-        else
-            echo "Error: WordPress root directory not found."
-            exit 1
-        fi
+	wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
+	if [[ -d "$wp_dir/wp-content" && -d "$wp_dir/wp-includes" && -f "$wp_dir/wp-config.php" ]]; then
+	    echo "$wp_dir"
+	else
+	    echo "Error: WordPress root directory not found."
+	    exit 1
+	fi
     }
     WP_DIR=$(find_wordpress_dir)
     if [[ -z "$WP_DIR" ]]; then
-        echo "Error: WordPress installation directory not found on the staging server."
-        exit 1
+	echo "Error: WordPress installation directory not found on the staging server."
+	exit 1
     fi
     echo "$WP_DIR"
 SSH_COMMANDS
@@ -93,20 +63,20 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash 
 
     # Function to find the WordPress root directory on the live server
     find_wordpress_dir() {
-        wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
-        if [[ -d "$wp_dir/wp-content" && -d "$wp_dir/wp-includes" && -f "$wp_dir/wp-config.php" ]]; then
-            echo "$wp_dir"
-        else
-            echo "Error: WordPress root directory not found."
-            exit 1
-        fi
+	wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
+	if [[ -d "$wp_dir/wp-content" && -d "$wp_dir/wp-includes" && -f "$wp_dir/wp-config.php" ]]; then
+	    echo "$wp_dir"
+	else
+	    echo "Error: WordPress root directory not found."
+	    exit 1
+	fi
     }
 
     # Find the WordPress directory on live server
     WP_DIR=$(find_wordpress_dir)
     if [[ -z "$WP_DIR" ]]; then
-        echo "Error: WordPress installation directory not found on the live server."
-        exit 1
+	echo "Error: WordPress installation directory not found on the live server."
+	exit 1
     fi
 
     # Step 5: Change to the live WordPress directory
@@ -114,8 +84,8 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash 
 
     # Ensure wp-cli is installed and functional
     if ! command -v wp &> /dev/null || ! wp core is-installed &> /dev/null; then
-        echo "Error: wp-cli is not installed or the directory is not a WordPress installation."
-        exit 1
+	echo "Error: wp-cli is not installed or the directory is not a WordPress installation."
+	exit 1
     fi
 
     # # Step 6: Perform WordPress database export on live server (Dry Run)
@@ -141,19 +111,23 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash 
 
     # Step 7: Rsync the WordPress directory and the export to the staging server (Dry run)
 
-        echo "Dry run: Syncing WordPress files and database export to the staging server..."
-        rsync -avn --rsync-path='/usr/bin/sudo /usr/bin/rsync' --exclude='wp-config.php' --exclude='wp-content/cache/' "$WP_DIR/" "$STAGING_USER@$STAGING_HOST:$STAGING_WP_DIR" --dry-run
-        RSYNC_STATUS=$?
-        echo "Rsync exit status: $RSYNC_STATUS"
-        if [[ $RSYNC_STATUS -ne 0 ]]; then
-            echo "Error: Rsync failed with exit status $RSYNC_STATUS."
-            exit 1
-        fi
+	echo "Dry run: Syncing WordPress files and database export to the staging server..."
+	rsync -avn --rsync-path='/usr/bin/sudo /usr/bin/rsync' --exclude='wp-config.php' --exclude='wp-content/cache/' "$WP_DIR/" "$STAGING_USER@$STAGING_HOST:$STAGING_WP_DIR" --dry-run
+	RSYNC_STATUS=$?
+	echo "Rsync exit status: $RSYNC_STATUS"
+	if [[ $RSYNC_STATUS -ne 0 ]]; then
+	    echo "Error: Rsync failed with exit status $RSYNC_STATUS."
+	    exit 1
+	fi
 
     # Step 8: Log out of the live server
     echo "Logging out from the live server."
     exit 0
 SSH_COMMANDS
+	
+}
+
+perform_techops_on_staging() {
 
 # Step 9: Log into the staging server via SSH again to complete remaining tasks
 echo "Logging into the staging server ($STAGING_HOST) to perform tasks..."
@@ -164,20 +138,20 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
 
     # Function to find the WordPress root directory on the staging server
     find_wordpress_dir() {
-        wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
-        if [[ -d "$wp_dir/wp-content" && -d "$wp_dir/wp-includes" && -f "$wp_dir/wp-config.php" ]]; then
-            echo "$wp_dir"
-        else
-            echo "Error: WordPress root directory not found."
-            exit 1
-        fi
+	wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
+	if [[ -d "$wp_dir/wp-content" && -d "$wp_dir/wp-includes" && -f "$wp_dir/wp-config.php" ]]; then
+	    echo "$wp_dir"
+	else
+	    echo "Error: WordPress root directory not found."
+	    exit 1
+	fi
     }
 
     # Step 10: Change to the staging WordPress directory
     WP_DIR=$(find_wordpress_dir)
     if [[ -z "$WP_DIR" ]]; then
-        echo "Error: WordPress installation directory not found on the staging server."
-        exit 1
+	echo "Error: WordPress installation directory not found on the staging server."
+	exit 1
     fi
     cd "$WP_DIR" || { echo "Failed to navigate to WordPress directory: $WP_DIR"; exit 1; }
     
@@ -197,43 +171,43 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     # Step 12 (Dry Run): Perform dry-run search and replace for the live URL (no changes will be made to the database)
     echo "Dry run: Performing search and replace for site URL..."
     if wp search-replace "$LIVE_URL" "$STAGING_URL" --skip-columns=guid --dry-run; then
-        echo "Dry run search and replace for site URL completed successfully."
+	echo "Dry run search and replace for site URL completed successfully."
     else
-        echo "Dry run search and replace failed."
+	echo "Dry run search and replace failed."
     fi
 
     # 1a. Check if WooCommerce Follow Up Emails is active and deactivate if necessary
     FOLLOWUP_EMAILS_PLUGIN="woocommerce-follow-up-emails/woocommerce-follow-up-emails.php"
     echo "Checking if WooCommerce Follow Up Emails plugin is active..."
     if wp plugin is-active "$FOLLOWUP_EMAILS_PLUGIN"; then
-        echo "Deactivating WooCommerce Follow Up Emails plugin..."
-        wp plugin deactivate "$FOLLOWUP_EMAILS_PLUGIN" || handle_error "Failed to deactivate WooCommerce Follow Up Emails plugin"
+	echo "Deactivating WooCommerce Follow Up Emails plugin..."
+	wp plugin deactivate "$FOLLOWUP_EMAILS_PLUGIN" || handle_error "Failed to deactivate WooCommerce Follow Up Emails plugin"
     else
-        echo "WooCommerce Follow Up Emails plugin is not active."
+	echo "WooCommerce Follow Up Emails plugin is not active."
     fi
 
     # 2. Install required plugins on the staging site
     REQUIRED_PLUGINS=("stop-emails" "email-log")
     for PLUGIN in "${REQUIRED_PLUGINS[@]}"; do
-        echo "Checking if plugin '$PLUGIN' is active..."
-        if wp plugin is-active "$PLUGIN"; then
-            echo "Plugin '$PLUGIN' is already active. Skipping installation."
-        else
-            echo "Installing and activating plugin '$PLUGIN'..."
-            wp plugin install "$PLUGIN" --activate || handle_error "Failed to install and activate plugin '$PLUGIN'"
-        fi
+	echo "Checking if plugin '$PLUGIN' is active..."
+	if wp plugin is-active "$PLUGIN"; then
+	    echo "Plugin '$PLUGIN' is already active. Skipping installation."
+	else
+	    echo "Installing and activating plugin '$PLUGIN'..."
+	    wp plugin install "$PLUGIN" --activate || handle_error "Failed to install and activate plugin '$PLUGIN'"
+	fi
     done
 
     # 3. Append 'wdm' at the end of each user email and user login if they don't already have it
     echo "Appending 'wdm' to user emails and usernames where it doesn't already exist..."
     wp db query "
-        UPDATE wp_users
-        SET user_email = CONCAT(user_email, 'wdm')
-        WHERE user_email NOT LIKE '%wdm';
+	UPDATE wp_users
+	SET user_email = CONCAT(user_email, 'wdm')
+	WHERE user_email NOT LIKE '%wdm';
 
-        UPDATE wp_users
-        SET user_login = CONCAT(user_login, 'wdm')
-        WHERE user_login NOT LIKE '%wdm';
+	UPDATE wp_users
+	SET user_login = CONCAT(user_login, 'wdm')
+	WHERE user_login NOT LIKE '%wdm';
     " || handle_error "Failed to append 'wdm' to user emails and usernames"
 
     echo "Successfully appended 'wdm' to user emails and usernames where necessary."
@@ -260,9 +234,9 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     echo "Backing up database..."
     DB_BACKUP_FILE="$BACKUP_DIR/db_backup_$(date +"%Y%m%d%H%M%S").sql"
     if wp db export "$DB_BACKUP_FILE"; then
-        echo "Database backup saved to: $DB_BACKUP_FILE"
+	echo "Database backup saved to: $DB_BACKUP_FILE"
     else
-        echo "Failed to backup database."; exit 1;
+	echo "Failed to backup database."; exit 1;
     fi
 
     echo "All backups completed successfully in: $BACKUP_DIR"
@@ -290,17 +264,17 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     # Step 13: Dry run update of plugins and themes with exceptions for failed plugins
     echo "Dry run update of all plugins..."
     if wp plugin update --all --dry-run; then
-        echo "Plugin update dry run completed successfully."
+	echo "Plugin update dry run completed successfully."
     else
-        echo "Plugin update dry run failed. Skipping some plugins."
+	echo "Plugin update dry run failed. Skipping some plugins."
     fi
 
     # Dry run update of themes
     echo "Dry run update of all themes..."
     if wp theme update --all --dry-run; then
-        echo "Theme update dry run completed successfully."
+	echo "Theme update dry run completed successfully."
     else
-        echo "Theme update dry run failed. Skipping some themes."
+	echo "Theme update dry run failed. Skipping some themes."
     fi
     
 ################################################################
@@ -382,9 +356,9 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     # Step 14: Clear the cache
     echo "Dry run clearing cache..."
     if wp cache flush --dry-run; then
-        echo "Cache flush dry run completed successfully."
+	echo "Cache flush dry run completed successfully."
     else
-        echo "Cache flush dry run failed."
+	echo "Cache flush dry run failed."
     fi
 
     # Step 15: Log out of the staging server
@@ -392,3 +366,115 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     exit 0
 SSH_COMMANDS
 
+}
+
+
+
+
+
+
+
+
+
+
+while true; do
+	# List of Actions
+	echo ""
+	echo ""
+	echo "Please choose an action by entering a number:"
+	echo "1. Read XML File"
+	echo "2. Clone Live to Staging"
+	echo "3. Take Staging Backup"
+	echo "4. Take Live Backup"
+	echo "5. Perform TechOps on Staging"
+	echo "6. Perform TechOps on Live"
+	echo "7. Exit Program"
+
+	# Taking user input for action number
+	read -p "Enter a number (1-7): " action_number
+
+# Perform action based on user input
+	case $action_number in
+	    1)
+		echo "You selected: Read XML File"
+		# Call the function to read XML file (you can add the actual logic)
+		# Step 1: Function to read parameters from a xml file
+		read_from_xml() {
+		    local file="$1"
+		    local section="$2"
+		    local key="$3"
+		    
+		    # Use xmllint to extract the value of the given key under the specified section
+		    xmllint --xpath "string(//serverConfigurations/$section/$key)" "$file"
+		}
+
+		# Path to the XML file containing parameters
+		PARAM_FILE="credentials.xml"
+
+		# Function to extract parameters
+		extract_parameters() {
+		    # Extract live configuration
+		    LIVE_HOST=$(read_from_xml "$PARAM_FILE" "live" "host")
+		    LIVE_PORT=$(read_from_xml "$PARAM_FILE" "live" "port")
+		    LIVE_USER=$(read_from_xml "$PARAM_FILE" "live" "user")
+		    LIVE_URL=$(read_from_xml "$PARAM_FILE" "live" "url")
+		    LIVE_PASSWORD=$(read_from_xml "$PARAM_FILE" "live" "password")
+
+		    # Extract staging configuration
+		    STAGING_HOST=$(read_from_xml "$PARAM_FILE" "staging" "host")
+		    STAGING_PORT=$(read_from_xml "$PARAM_FILE" "staging" "port")
+		    STAGING_USER=$(read_from_xml "$PARAM_FILE" "staging" "user")
+		    STAGING_URL=$(read_from_xml "$PARAM_FILE" "staging" "url")
+		    STAGING_PASSWORD=$(read_from_xml "$PARAM_FILE" "staging" "password")
+
+		    # Export variables to make them globally accessible
+		    export LIVE_HOST LIVE_PORT LIVE_USER LIVE_URL
+		    export STAGING_HOST STAGING_PORT STAGING_USER STAGING_URL
+		}
+
+		# Extract SSH credentials and URLs from the XML file
+		extract_parameters 2>/dev/null
+
+		# Step 2: Validate extracted parameters
+		if [[ -z "$LIVE_HOST" || -z "$STAGING_HOST" || -z "$LIVE_URL" || -z "$STAGING_URL" ]]; then
+		    echo "Error: Missing required parameters in the xml file."
+		    exit 1
+		fi
+
+		echo "All parameters read successfully:"
+		echo "LIVE_HOST=$LIVE_HOST"
+		echo "STAGING_HOST=$STAGING_HOST"
+		echo "LIVE_URL=$LIVE_URL"
+		echo "STAGING_URL=$STAGING_URL"
+		;;
+            2)
+		echo "You selected: Clone Live to Staging"
+		# Call the function to clone live to staging (you can add the actual logic)
+		clone_live
+		;;
+	    3)
+		echo "You selected: Take Staging Backup"
+		# Call the function to take staging backup (you can add the actual logic)
+		;;
+	    4)
+		echo "You selected: Take Live Backup"
+		# Call the function to take live backup (you can add the actual logic)
+		;;
+	    5)
+		echo "You selected: Perform TechOps on Staging"
+		# Call the function to perform TechOps on Staging (you can add the actual logic)
+		perform_techops_on_staging
+		;;
+	    6)
+		echo "You selected: Perform TechOps on Live"
+		# Call the function to perform TechOps on Live (you can add the actual logic)
+		;;
+	    7)
+		    echo "Exiting the program. Goodbye!"
+		    exit 0
+		    ;;
+	    *)
+	    	echo "Invalid selection. Please choose a number between 1 and 7."
+	    	;;
+	esac
+done
