@@ -269,6 +269,24 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     
 ##########################################################
 
+# Create 'TechOps Reports' directory for reports
+    echo "Creating 'TechOps Reports' directory..."
+    REPORT_DIR="$WP_DIR/TechOps_Reports"
+    mkdir -p "$REPORT_DIR"
+
+    # Generate plugin and theme reports before updates
+    echo "Generating pre-update plugin and theme report..."
+    PLUGIN_REPORT_BEFORE="$REPORT_DIR/plugin_report_before_update_$(date +"%Y%m%d%H%M%S").txt"
+    THEME_REPORT_BEFORE="$REPORT_DIR/theme_report_before_update_$(date +"%Y%m%d%H%M%S").txt"
+
+    wp plugin list --fields=name,status,version,update_version --format=table > "$PLUGIN_REPORT_BEFORE" || { echo "Failed to generate plugin report."; exit 1; }
+    wp theme list --fields=name,status,version,update_version --format=table > "$THEME_REPORT_BEFORE" || { echo "Failed to generate theme report."; exit 1; }
+
+    echo "Pre-update plugin report saved to: $PLUGIN_REPORT_BEFORE"
+    echo "Pre-update theme report saved to: $THEME_REPORT_BEFORE"
+    
+###############################################################
+
     # Step 13: Dry run update of plugins and themes with exceptions for failed plugins
     echo "Dry run update of all plugins..."
     if wp plugin update --all --dry-run; then
@@ -284,6 +302,82 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     else
         echo "Theme update dry run failed. Skipping some themes."
     fi
+    
+################################################################
+
+ # Generate plugin and theme reports after updates
+    echo "Generating post-update plugin and theme report..."
+    PLUGIN_REPORT_AFTER="$REPORT_DIR/plugin_report_after_update_$(date +"%Y%m%d%H%M%S").txt"
+    THEME_REPORT_AFTER="$REPORT_DIR/theme_report_after_update_$(date +"%Y%m%d%H%M%S").txt"
+
+    wp plugin list --fields=name,status,version,update_version --format=table > "$PLUGIN_REPORT_AFTER" || { echo "Failed to generate plugin report."; exit 1; }
+    wp theme list --fields=name,status,version,update_version --format=table > "$THEME_REPORT_AFTER" || { echo "Failed to generate theme report."; exit 1; }
+
+    echo "Post-update plugin report saved to: $PLUGIN_REPORT_AFTER"
+    echo "Post-update theme report saved to: $THEME_REPORT_AFTER"
+    
+################################################################
+
+### Logic for comparing plugin and theme version on live site
+
+# Compare reports and apply actions
+# echo "Processing plugin and theme version differences..."
+
+# # Process Plugins
+# echo "Processing plugins..."
+# if [[ -f "$PLUGIN_REPORT_BEFORE" && -f "$PLUGIN_REPORT_AFTER" ]]; then
+#     awk -v wp_cli_cmd="wp plugin install" '
+#         BEGIN { print "Analyzing plugins..." }
+#         NR == FNR && $1 != "name" { before[$1] = $3; next }
+#         NR != FNR && $1 != "name" {
+#             plugin = $1;
+#             before_ver = before[plugin];
+#             after_ver = $3;
+#             if (after_ver > before_ver) {
+#                 print "Upgrading plugin: " plugin " from version " before_ver " to " after_ver;
+#                 system(wp_cli_cmd " " plugin " --version=" after_ver " --force")
+#             } else if (after_ver < before_ver) {
+#                 print "Downgrading plugin: " plugin " from version " before_ver " to " after_ver;
+#                 system(wp_cli_cmd " " plugin " --version=" after_ver " --force")
+#             } else {
+#                 print "No changes needed for plugin: " plugin;
+#             }
+#         }
+#     ' "$PLUGIN_REPORT_BEFORE" "$PLUGIN_REPORT_AFTER"
+# else
+#     echo "Warning: Plugin reports not found, skipping plugin comparison."
+# fi
+
+# # Process Themes
+# echo "Processing themes..."
+# if [[ -f "$THEME_REPORT_BEFORE" && -f "$THEME_REPORT_AFTER" ]]; then
+#     awk -v wp_cli_cmd="wp theme install" '
+#         BEGIN { print "Analyzing themes..." }
+#         NR == FNR && $1 != "name" { before[$1] = $3; next }
+#         NR != FNR && $1 != "name" {
+#             theme = $1;
+#             before_ver = before[theme];
+#             after_ver = $3;
+#             if (after_ver > before_ver) {
+#                 print "Upgrading theme: " theme " from version " before_ver " to " after_ver;
+#                 system(wp_cli_cmd " " theme " --version=" after_ver " --force")
+#             } else if (after_ver < before_ver) {
+#                 print "Downgrading theme: " theme " from version " before_ver " to " after_ver;
+#                 system(wp_cli_cmd " " theme " --version=" after_ver " --force")
+#             } else {
+#                 print "No changes needed for theme: " theme;
+#             }
+#         }
+#     ' "$THEME_REPORT_BEFORE" "$THEME_REPORT_AFTER"
+# else
+#     echo "Warning: Theme reports not found, skipping theme comparison."
+# fi
+
+# echo "Version comparison and actions completed."
+
+
+#########################################################################
+
 
     # Step 14: Clear the cache
     echo "Dry run clearing cache..."
