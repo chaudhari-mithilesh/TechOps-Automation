@@ -1,50 +1,51 @@
 #!/bin/bash
 
-# Step 1: Function to read parameters from a text file
-read_from_txt() {
+# Step 1: Function to read parameters from a xml file
+read_from_xml() {
     local file="$1"
-    local key="$2"
-    grep "^$key=" "$file" | cut -d'=' -f2
+    local section="$2"
+    local key="$3"
+    
+    # Use xmllint to extract the value of the given key under the specified section
+    xmllint --xpath "string(//serverConfigurations/$section/$key)" "$file"
 }
 
-# Path to the text file containing parameters
-PARAM_FILE="credentials.txt"
+# Path to the XML file containing parameters
+PARAM_FILE="credentials.xml"
 
 # Function to extract parameters
 extract_parameters() {
-    local variables=(
-        "LIVE_HOST live_host"
-        "LIVE_PORT live_port"
-        "LIVE_USER live_user"
-        "STAGING_HOST staging_host"
-        "STAGING_PORT staging_port"
-        "STAGING_USER staging_user"
-        "LIVE_URL live_url"
-        "STAGING_URL staging_url"
-    )
+    # Extract live configuration
+    LIVE_HOST=$(read_from_xml "$PARAM_FILE" "live" "host")
+    LIVE_PORT=$(read_from_xml "$PARAM_FILE" "live" "port")
+    LIVE_USER=$(read_from_xml "$PARAM_FILE" "live" "user")
+    LIVE_URL=$(read_from_xml "$PARAM_FILE" "live" "url")
 
-    for var in "${variables[@]}"; do
-        key="${var%% *}"
-        value="${var#* }"
-        eval "$key=$(read_from_txt "$PARAM_FILE" "$value")"
-        #echo "$key = $(eval echo \${$key})"
+    # Extract staging configuration
+    STAGING_HOST=$(read_from_xml "$PARAM_FILE" "staging" "host")
+    STAGING_PORT=$(read_from_xml "$PARAM_FILE" "staging" "port")
+    STAGING_USER=$(read_from_xml "$PARAM_FILE" "staging" "user")
+    STAGING_URL=$(read_from_xml "$PARAM_FILE" "staging" "url")
 
-        # Export the variable to make it global
-        export $key
-        #echo "$key = $key"
-    done
+    # Export variables to make them globally accessible
+    export LIVE_HOST LIVE_PORT LIVE_USER LIVE_URL
+    export STAGING_HOST STAGING_PORT STAGING_USER STAGING_URL
 }
 
-# Extract SSH credentials and URLs from the text file
+# Extract SSH credentials and URLs from the XML file
 extract_parameters 2>/dev/null
 
 # Step 2: Validate extracted parameters
 if [[ -z "$LIVE_HOST" || -z "$STAGING_HOST" || -z "$LIVE_URL" || -z "$STAGING_URL" ]]; then
-    echo "Error: Missing required parameters in the text file."
+    echo "Error: Missing required parameters in the xml file."
     exit 1
 fi
 
 echo "All parameters read successfully:"
+echo "LIVE_HOST=$LIVE_HOST"
+echo "STAGING_HOST=$STAGING_HOST"
+echo "LIVE_URL=$LIVE_URL"
+echo "STAGING_URL=$STAGING_URL"
 
 # Step 3: Log into the staging server first to determine the WP directory
 echo "Logging into the staging server ($STAGING_HOST) to find the WordPress directory..."
