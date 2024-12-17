@@ -1,2 +1,4 @@
 credentials.txt
 credentials.xml
+**/*.xml
+**/*.txt
