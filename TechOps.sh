@@ -20,24 +20,30 @@ EOF
 clone_live() {
 
 # Step 3: Log into the staging server first to determine the WP directory
+echo ""
 echo "Logging into the staging server ($STAGING_HOST) to find the WordPress directory..."
-STAGING_WP_DIR=$(sshpass -p "$STAGING_PASSWORD" ssh -q -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HOST" bash -s << "SSH_COMMANDS" 2>/dev/null
+echo ""
+STAGING_WP_DIR=$(sshpass -p "$STAGING_PASSWORD" ssh -o StrictHostKeyChecking=no -q -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HOST" bash -s << "SSH_COMMANDS" 2>/dev/null
     # Function to find the WordPress root directory on the staging server
     find_wordpress_dir() {
 	wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
 	if [[ -d "$wp_dir/wp-content" && -d "$wp_dir/wp-includes" && -f "$wp_dir/wp-config.php" ]]; then
 	    echo "$wp_dir"
+	    echo ""
 	else
 	    echo "Error: WordPress root directory not found."
+	    echo ""
 	    exit 1
 	fi
     }
     WP_DIR=$(find_wordpress_dir)
     if [[ -z "$WP_DIR" ]]; then
 	echo "Error: WordPress installation directory not found on the staging server."
+	echo ""
 	exit 1
     fi
     echo "$WP_DIR"
+    echo ""
 SSH_COMMANDS
 )
 
@@ -48,11 +54,15 @@ if [[ -z "$STAGING_WP_DIR" ]]; then
 fi
 
 echo "Staging WordPress directory is: $STAGING_WP_DIR" 2>/dev/null
+echo ""
 
 
 # Step 4: Log into the live server using SSH
+echo ""
 echo "Logging into the live server ($LIVE_HOST) using SSH..."
-sshpass -p "$STAGING_PASSWORD" ssh -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash -s -- "$LIVE_URL" "$STAGING_PORT" "$STAGING_HOST" "$STAGING_USER" "$STAGING_WP_DIR" << "SSH_COMMANDS"
+echo ""
+
+sshpass -p "$LIVE_PASSWORD" ssh -o StrictHostKeyChecking=no -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash -s -- "$LIVE_URL" "$STAGING_PORT" "$STAGING_HOST" "$STAGING_USER" "$STAGING_WP_DIR" << "SSH_COMMANDS"
     LIVE_URL="$1"  # Pass LIVE_URL dynamically from the script
     STAGING_PORT="$2"
     STAGING_HOST="$3"
@@ -60,12 +70,14 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash 
     STAGING_WP_DIR="$5"
 
     echo "Logged into the live server successfully."
-
+    echo ""
+    
     # Function to find the WordPress root directory on the live server
     find_wordpress_dir() {
 	wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
 	if [[ -d "$wp_dir/wp-content" && -d "$wp_dir/wp-includes" && -f "$wp_dir/wp-config.php" ]]; then
 	    echo "$wp_dir"
+	    echo ""
 	else
 	    echo "Error: WordPress root directory not found."
 	    exit 1
@@ -88,34 +100,48 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash 
 	exit 1
     fi
 
-    # # Step 6: Perform WordPress database export on live server (Dry Run)
-    # echo "Dry run: Exporting the WordPress database..."
-    # TIMESTAMP=$(date +"%Y%m%d%H%M%S")
-    # EXPORT_DIR="./db_exports"
-    # EXPORT_FILE="${EXPORT_DIR}/live_db_export_${TIMESTAMP}.sql"
+    # Step 6: Perform WordPress database export on live server (Dry Run)
+    echo ""
+    echo "Exporting the WordPress database..."
+    EXPORT_DIR="./db_exports"
+    EXPORT_FILE="${EXPORT_DIR}/live_db_export.sql"
 
-    # if [ ! -d "$EXPORT_DIR" ]; then
-    #     mkdir -p "$EXPORT_DIR" || { echo "Failed to create export directory: $EXPORT_DIR"; exit 1; }
-    # fi
-    # if wp db export "$EXPORT_FILE" --dry-run; then
-    #     echo "Database export (dry run) completed successfully to: $EXPORT_FILE"
-    # else
-    #     echo "Database export failed. Exiting."
-    #     exit 1
-    # fi
+    if [ ! -d "$EXPORT_DIR" ]; then
+        mkdir -p "$EXPORT_DIR" || { echo "Failed to create export directory: $EXPORT_DIR"; exit 1; }
+    fi
+    if wp db export "$EXPORT_FILE"; then
+        echo "Database export completed successfully to: $EXPORT_FILE"
+        echo ""
+    else
+        echo "Database export failed. Exiting."
+        exit 1
+    fi
 
-    # if [ -z "$STAGING_PORT" ]; then
-    #     echo "Error: STAGING_PORT is not set or empty. Please check your credentials.txt file."
-    #     exit 1
-    # fi
+    if [ -z "$STAGING_PORT" ]; then
+        echo "Error: STAGING_PORT is not set or empty. Please check your credentials.txt file."
+        exit 1
+    fi
 
     # Step 7: Rsync the WordPress directory and the export to the staging server (Dry run)
 
 	echo "Dry run: Syncing WordPress files and database export to the staging server..."
-	rsync -avn --rsync-path='/usr/bin/sudo /usr/bin/rsync' --exclude='wp-config.php' --exclude='wp-content/cache/' "$WP_DIR/" "$STAGING_USER@$STAGING_HOST:$STAGING_WP_DIR" --dry-run
+	if rsync -aqn --rsync-path='/usr/bin/sudo /usr/bin/rsync' --exclude='wp-config.php' --exclude='wp-content/cache/' --exclude='updraft/' "$WP_DIR/" "$STAGING_USER@$STAGING_HOST:$STAGING_WP_DIR" --dry-run; then
+	    echo "Rsync Dry Run completed successfully"
+	    echo ""
+	    echo "Performing Rsync"
+	    rsync -raqn --rsync-path='/usr/bin/sudo /usr/bin/rsync' --exclude='wp-config.php' --exclude='wp-content/cache/' --exclude='updraft/' "$WP_DIR/" "$STAGING_USER@$STAGING_HOST:$STAGING_WP_DIR"
+	    echo "Rsync completed successfully"
+	else
+	    echo "Rsync failed. Exiting."
+	    exit 1
+	fi
+
 	RSYNC_STATUS=$?
+	echo ""
 	echo "Rsync exit status: $RSYNC_STATUS"
+
 	if [[ $RSYNC_STATUS -ne 0 ]]; then
+	    echo ""
 	    echo "Error: Rsync failed with exit status $RSYNC_STATUS."
 	    exit 1
 	fi
@@ -124,23 +150,25 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$LIVE_PORT" "$LIVE_USER@$LIVE_HOST" bash 
     echo "Logging out from the live server."
     exit 0
 SSH_COMMANDS
-	
 }
 
 perform_techops_on_staging() {
 
 # Step 9: Log into the staging server via SSH again to complete remaining tasks
+echo ""
 echo "Logging into the staging server ($STAGING_HOST) to perform tasks..."
-sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HOST" bash -s -- "$STAGING_URL" << "SSH_COMMANDS"
+echo ""
+sshpass -p "$STAGING_PASSWORD" ssh -o StrictHostKeyChecking=no -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HOST" bash -s -- "$STAGING_URL" << "SSH_COMMANDS"
     STAGING_URL="$1"  # Pass STAGING_URL dynamically from the script
 
     echo "Logged into the staging server successfully."
-
+    echo ""
     # Function to find the WordPress root directory on the staging server
     find_wordpress_dir() {
 	wp_dir=$(find /var/www /home -type d -name "wp-admin" -exec dirname {} \; 2>/dev/null | head -n 1)
 	if [[ -d "$wp_dir/wp-content" && -d "$wp_dir/wp-includes" && -f "$wp_dir/wp-config.php" ]]; then
 	    echo "$wp_dir"
+	    echo ""
 	else
 	    echo "Error: WordPress root directory not found."
 	    exit 1
@@ -155,23 +183,30 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     fi
     cd "$WP_DIR" || { echo "Failed to navigate to WordPress directory: $WP_DIR"; exit 1; }
     
-    # # Step 11: Import the database and perform dry-run search and replace for site URL (excluding config file)
+    # Step 11: Import the database and perform dry-run search and replace for site URL (excluding config file)
     # TIMESTAMP=$(date +"%Y%m%d%H%M%S")
-    # EXPORT_DIR="./db_exports"
-    # EXPORT_FILE="${EXPORT_DIR}/live_db_export_${TIMESTAMP}.sql"
+    EXPORT_DIR="./db_exports"
+    EXPORT_FILE="${EXPORT_DIR}/live_db_export.sql"
 
-    # # Import the database
-    # if wp db import "$EXPORT_FILE"; then
-    #     echo "Database imported successfully."
-    # else
-    #     echo "Database import failed. Exiting."
-    #     exit 1
-    # fi
+    # Import the database
+    if wp db import "$EXPORT_FILE"; then
+        echo "Database imported successfully."
+    else
+        echo "Database import failed. Exiting."
+        exit 1
+    fi
 
     # Step 12 (Dry Run): Perform dry-run search and replace for the live URL (no changes will be made to the database)
+    echo ""
     echo "Dry run: Performing search and replace for site URL..."
+    echo ""
     if wp search-replace "$LIVE_URL" "$STAGING_URL" --skip-columns=guid --dry-run; then
 	echo "Dry run search and replace for site URL completed successfully."
+	echo ""
+	echo "Performing search replace $LIVE_URL -> $STAGING_URL"
+	echo ""
+	wp search-replace "$LIVE_URL" "$STAGING_URL" --skip-columns=guid
+	echo "search and replace for site URL completed successfully."
     else
 	echo "Dry run search and replace failed."
     fi
@@ -261,21 +296,71 @@ sshpass -p "$STAGING_PASSWORD" ssh -p "$STAGING_PORT" "$STAGING_USER@$STAGING_HO
     
 ###############################################################
 
-    # Step 13: Dry run update of plugins and themes with exceptions for failed plugins
-    echo "Dry run update of all plugins..."
-    if wp plugin update --all --dry-run; then
-	echo "Plugin update dry run completed successfully."
-    else
-	echo "Plugin update dry run failed. Skipping some plugins."
-    fi
+    # # Step 13: Dry run update of plugins and themes with exceptions for failed plugins
+    # echo "Dry run update of all plugins..."
+    # if wp plugin update --all --dry-run; then
+	# echo "Plugin update dry run completed successfully."
+	# echo ""
+	# echo "Updating all plugins"
+	# echo ""
+	# wp plugin update --all
+	# echo "Plugin update completed successfully."
+    # else
+	# echo "Plugin update dry run failed. Skipping some plugins."
+    # fi
 
-    # Dry run update of themes
-    echo "Dry run update of all themes..."
-    if wp theme update --all --dry-run; then
-	echo "Theme update dry run completed successfully."
-    else
-	echo "Theme update dry run failed. Skipping some themes."
+    # # Dry run update of themes
+    # echo "Dry run update of all themes..."
+    # if wp theme update --all --dry-run; then
+	# echo "Theme update dry run completed successfully."
+    # else
+	# echo "Theme update dry run failed. Skipping some themes."
+    # fi
+    
+    
+# Step 13: Dry run update of plugins and themes with exceptions for failed plugins
+echo ""
+echo "Dry run update of all plugins..."
+echo ""
+failed_plugins=()
+
+while IFS= read -r line; do
+    plugin_name=$(echo "$line" | awk '{print $1}')
+    if ! wp plugin update "$plugin_name" --dry-run; then
+	echo "Plugin update dry run failed for $plugin_name. Skipping..."
+	failed_plugins+=("$plugin_name")
     fi
+done < <(wp plugin list --field=name --status=active)
+
+if [[ ${#failed_plugins[@]} -eq 0 ]]; then
+    echo ""
+    echo "Plugin update dry run completed successfully for all plugins."
+    echo ""
+else
+    echo ""
+    echo "Some plugins failed during dry run. Updating remaining plugins..."
+    echo ""
+    wp plugin update --all --skip-plugins=$(IFS=, ; echo "${failed_plugins[*]}")
+fi
+
+echo ""
+echo "Updating themes"
+failed_themes=()
+
+while IFS= read -r line; do
+    theme_name=$(echo "$line" | awk '{print $1}')
+    if ! wp theme update "$theme_name" --dry-run; then
+	echo "Theme update dry run failed for $theme_name. Skipping..."
+	failed_themes+=("$theme_name")
+    fi
+done < <(wp theme list --field=name --status=active)
+
+if [[ ${#failed_themes[@]} -eq 0 ]]; then
+    echo "Theme update dry run completed successfully for all themes."
+else
+    echo "Some themes failed during dry run. Updating remaining themes..."
+    wp theme update --all --skip-themes=$(IFS=, ; echo "${failed_themes[*]}")
+fi
     
 ################################################################
 
@@ -453,11 +538,11 @@ while true; do
 		clone_live
 		;;
 	    3)
-		echo "You selected: Take Staging Backup"
+		echo "You selected: Take Staging Backup -  - This feature is under developement."
 		# Call the function to take staging backup (you can add the actual logic)
 		;;
 	    4)
-		echo "You selected: Take Live Backup"
+		echo "You selected: Take Live Backup - This feature is under developement."
 		# Call the function to take live backup (you can add the actual logic)
 		;;
 	    5)
@@ -466,7 +551,7 @@ while true; do
 		perform_techops_on_staging
 		;;
 	    6)
-		echo "You selected: Perform TechOps on Live"
+		echo "You selected: Perform TechOps on Live - This feature is under developement."
 		# Call the function to perform TechOps on Live (you can add the actual logic)
 		;;
 	    7)
