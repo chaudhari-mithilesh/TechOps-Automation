@@ -23,12 +23,14 @@ This script requires the following libraries to be installed:
 	`dos2unix TechOps.sh`
 
 	`chmod +x TechOps.sh`
+	
+5. Execute script with the following commands:	
 
 	`./TechOps.sh`
 
 
 
-5. Choose an action from the available options presented in the script.
+6. Choose an action from the available options presented in the script.
 
 ## Reporting Bugs
 
