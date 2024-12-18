@@ -17,9 +17,13 @@ This script requires the following libraries to be installed:
 3. Edit the `credentials.xml` file with your actual SSH details.
 
 4. Run the following commands:
+
 	`dos2unix credentials.xml`
+
 	`dos2unix TechOps.sh`
+
 	`chmod +x TechOps.sh`
+
 	`./TechOps.sh`
 
 
