@@ -1,0 +1,83 @@
+{
+  "live_payload": {
+    "test": {
+      "testUrls": [
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/"
+      ],
+      "homeUrl": "https://wordpress-1000690-5298643.cloudwaysapps.com/",
+      "productUrl": null,
+      "productId": null
+    },
+    "reference": {
+      "referenceUrls": [
+        "https://mypathwaysdevotional.com/",
+        "https://mypathwaysdevotional.com/topics/living-the-new-life/",
+        "https://mypathwaysdevotional.com/topics/freedom-wholeness/",
+        "https://mypathwaysdevotional.com/topics/knowing-god/",
+        "https://mypathwaysdevotional.com/topics/wisdom-of-god/",
+        "https://mypathwaysdevotional.com/topics/perspective-2/"
+      ],
+      "homeUrl": "https://mypathwaysdevotional.com/",
+      "productUrl": null,
+      "productId": null
+    },
+    "devices": [
+      {
+        "name": "desktop",
+        "width": 1024,
+        "height": 768
+      },
+      {
+        "name": "mobile",
+        "width": 375,
+        "height": 667
+      }
+    ]
+  },
+
+  "staging_payload": {
+    "test": {
+      "testUrls": [
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/"
+      ],
+      "homeUrl": "https://wordpress-1000690-5298643.cloudwaysapps.com/",
+      "productUrl": null,
+      "productId": null
+    },
+    "reference": {
+      "referenceUrls": [
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/",
+        "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/"
+      ],
+      "homeUrl": "https://wordpress-1000690-5298643.cloudwaysapps.com/",
+      "productUrl": null,
+      "productId": null
+    },
+    "devices": [
+      {
+        "name": "desktop",
+        "width": 1024,
+        "height": 768
+      },
+      {
+        "name": "mobile",
+        "width": 375,
+        "height": 667
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "id": "visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd",
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "label": "mobile",
+      "width": 375,
+      "height": 667
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/",
+      "url": "https://wordpress-1000690-5298643.cloudwaysapps.com/",
+      "referenceUrl": "https://wordpress-1000690-5298643.cloudwaysapps.com/",
+      "onReadyScript": "puppet/add-to-cart.js",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectorExpansion": true,
+      "selectors": [
+        "document"
+      ],
+      "readyEvent": null,
+      "readySelector": null,
+      "misMatchThreshold": 0.1,
+      "delay": 5000
+    },
+    {
+      "label": "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/",
+      "url": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/",
+      "referenceUrl": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/",
+      "onReadyScript": "puppet/add-to-cart.js",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectorExpansion": true,
+      "selectors": [
+        "document"
+      ],
+      "readyEvent": null,
+      "readySelector": null,
+      "misMatchThreshold": 0.1,
+      "delay": 5000
+    },
+    {
+      "label": "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/",
+      "url": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/",
+      "referenceUrl": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/",
+      "onReadyScript": "puppet/add-to-cart.js",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectorExpansion": true,
+      "selectors": [
+        "document"
+      ],
+      "readyEvent": null,
+      "readySelector": null,
+      "misMatchThreshold": 0.1,
+      "delay": 5000
+    },
+    {
+      "label": "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/",
+      "url": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/",
+      "referenceUrl": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/",
+      "onReadyScript": "puppet/add-to-cart.js",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectorExpansion": true,
+      "selectors": [
+        "document"
+      ],
+      "readyEvent": null,
+      "readySelector": null,
+      "misMatchThreshold": 0.1,
+      "delay": 5000
+    },
+    {
+      "label": "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/",
+      "url": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/",
+      "referenceUrl": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/",
+      "onReadyScript": "puppet/add-to-cart.js",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectorExpansion": true,
+      "selectors": [
+        "document"
+      ],
+      "readyEvent": null,
+      "readySelector": null,
+      "misMatchThreshold": 0.1,
+      "delay": 5000
+    },
+    {
+      "label": "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/",
+      "url": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/",
+      "referenceUrl": "https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/",
+      "onReadyScript": "puppet/add-to-cart.js",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectorExpansion": true,
+      "selectors": [
+        "document"
+      ],
+      "readyEvent": null,
+      "readySelector": null,
+      "misMatchThreshold": 0.1,
+      "delay": 5000
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "ci_report": "backstop_data/ci_report",
+    "html_report": "backstop_data/html_report"
+  },
+  "report": [
+    "CI"
+  ],
+  "engine": "puppeteer",
+  "headless": true,
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

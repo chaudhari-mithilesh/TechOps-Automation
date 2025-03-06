@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="12" failures="5" errors="5" skipped="0">
+  <testsuite name="BackstopJS" tests="12" failures="5" errors="5" skipped="0">
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/"/>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/"/>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/">
+      <failure message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/ (document) component"/>
+      <error message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/ (document) component"/>
+    </testcase>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/">
+      <failure message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/ (document) component"/>
+      <error message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/ (document) component"/>
+    </testcase>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/">
+      <failure message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/ (document) component"/>
+      <error message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/ (document) component"/>
+    </testcase>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/"/>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/"/>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/">
+      <failure message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/ (document) component"/>
+      <error message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/ (document) component"/>
+    </testcase>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/">
+      <failure message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/ (document) component"/>
+      <error message="Design deviation ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/ (document) component"/>
+    </testcase>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/"/>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/"/>
+    <testcase classname="document" name=" ›› Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/"/>
+  </testsuite>
+</testsuites>

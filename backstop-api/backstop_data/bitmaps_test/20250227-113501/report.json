@@ -1,0 +1,33 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/visual_regression_cd756887-6f11-4cc5-8eb8-dd0ead9aaf86_Logged_out_Test_https__wordpress-1000690-5294170cloudwaysappscom__0_document_0_desktop.png",
+        "test": "../bitmaps_test/20250227-113501/visual_regression_cd756887-6f11-4cc5-8eb8-dd0ead9aaf86_Logged_out_Test_https__wordpress-1000690-5294170cloudwaysappscom__0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "visual_regression_cd756887-6f11-4cc5-8eb8-dd0ead9aaf86_Logged_out_Test_https__wordpress-1000690-5294170cloudwaysappscom__0_document_0_desktop.png",
+        "label": "Logged out Test https://wordpress-1000690-5294170.cloudwaysapps.com/",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://wordpress-1000690-5294170.cloudwaysapps.com/",
+        "referenceUrl": "https://mypathwaysdevotional.com/",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.10603218780251694,
+          "misMatchPercentage": "0.11",
+          "analysisTime": 93
+        },
+        "diffImage": "../bitmaps_test/20250227-113501/failed_diff_visual_regression_cd756887-6f11-4cc5-8eb8-dd0ead9aaf86_Logged_out_Test_https__wordpress-1000690-5294170cloudwaysappscom__0_document_0_desktop.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "visual_regression_cd756887-6f11-4cc5-8eb8-dd0ead9aaf86"
+}
