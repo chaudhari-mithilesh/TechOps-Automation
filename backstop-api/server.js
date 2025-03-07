@@ -241,7 +241,7 @@ app.post('/api/visual-regression/reference/:jobId', (req, res) => {
   job.status = 'reference_running';
   const configPath = job.configPath;
 
-  const referenceProcess = spawn('backstop', ['reference', '--config', configPath]);
+  const referenceProcess = spawn('./node_modules/.bin/backstop', ['reference', '--config', configPath]);
 
   referenceProcess.stdout.on('data', (data) => {
     console.log(`BackstopJS Reference: ${data.toString()}`);
@@ -280,7 +280,7 @@ app.post('/api/visual-regression/test/:jobId', (req, res) => {
   job.status = 'test_running';
   const configPath = job.configPath;
 
-  const testProcess = spawn('backstop', ['test', '--config', configPath]);
+  const testProcess = spawn('./node_modules/.bin/backstop', ['test', '--config', configPath]);
 
   testProcess.stdout.on('data', (data) => {
     console.log(`BackstopJS Test: ${data.toString()}`);
