@@ -251,6 +251,12 @@ sshpass -p "$STAGING_PASSWORD" ssh -o StrictHostKeyChecking=no -p "$STAGING_PORT
 	wp option update siteurl "$STAGING_URL"
 	wp option update home "$STAGING_URL"
 
+	wp cache flush
+
+	wp option get siteurl
+	wp option get home
+
+
     # Step 12 (Dry Run): Perform dry-run search and replace for the live URL (no changes will be made to the database)
     echo ""
     echo "Dry run: Performing search and replace for site URL..."
@@ -262,6 +268,7 @@ sshpass -p "$STAGING_PASSWORD" ssh -o StrictHostKeyChecking=no -p "$STAGING_PORT
 	echo ""
 	wp search-replace "$LIVE_URL" "$STAGING_URL" --skip-columns=guid --all-tables
 	echo "search and replace for site URL completed successfully."
+	wp cache flush
     else
 	echo "Dry run search and replace failed."
     fi
@@ -272,6 +279,9 @@ sshpass -p "$STAGING_PASSWORD" ssh -o StrictHostKeyChecking=no -p "$STAGING_PORT
 		wp option update home "$STAGING_URL"
 	fi
 	echo "Updated the URLs."
+	wp cache flush
+	wp option get siteurl
+	wp option get home
 
     # 1a. Check if WooCommerce Follow Up Emails is active and deactivate if necessary
     FOLLOWUP_EMAILS_PLUGIN="woocommerce-follow-up-emails/woocommerce-follow-up-emails.php"

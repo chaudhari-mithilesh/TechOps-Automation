@@ -16,8 +16,8 @@ module.exports = async (page, scenario, viewport) => {
         });
      }
 
-    const username = 'Erik';
-    const password = '8AaBi9P@gp4RZ@4AlDia';
+    const username = '';
+    const password = '';
 
     try {
         const waitForNetworkIdle = async () => {

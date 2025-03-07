@@ -1,10 +1,10 @@
 API running on port 3000
 Received request to start visual regression test
-Generated job ID: e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd
-Config file path: /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop-e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd.json
+Generated job ID: 50f471be-b57e-44c2-b846-1c3e6e629a62
+Config file path: /home/mithilesh/TechOps-Automation/backstop-api/backstop-50f471be-b57e-44c2-b846-1c3e6e629a62.json
 BackstopJS Reference: BackstopJS v6.3.25
 
-BackstopJS Reference: Loading config:  /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop-e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd.json 
+BackstopJS Reference: Loading config:  /home/mithilesh/TechOps-Automation/backstop-api/backstop-50f471be-b57e-44c2-b846-1c3e6e629a62.json 
 
 
 BackstopJS Reference: COMMAND | Executing core for "reference"
@@ -27,21 +27,37 @@ BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is inst
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
+BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
+
 BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
-BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
 
-BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
 
-BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
 
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/"
+BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/"
+BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/"
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/"
+
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
     at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
     at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
     at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
@@ -51,9 +67,9 @@ BackstopJS Reference Error: Error encountered during add to cart test for scenar
     at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
     at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
     at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
 
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
     at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
     at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
     at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
@@ -63,85 +79,9 @@ BackstopJS Reference Error: Error encountered during add to cart test for scenar
     at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
     at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
     at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Reference: x Close Browser
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Reference: x Close Browser
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Reference: CREATING NEW REFERENCE FILE
-
-BackstopJS Reference: CREATING NEW REFERENCE FILE
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/"
-
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/"
-
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/"
-
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Reference: x Close Browser
 
 BackstopJS Reference: x Close Browser
 
@@ -151,11 +91,9 @@ BackstopJS Reference: CREATING NEW REFERENCE FILE
 
 BackstopJS Reference: CREATING NEW REFERENCE FILE
 
-BackstopJS Reference: CREATING NEW REFERENCE FILE
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/"
 
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/"
-
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
     at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
     at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
     at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
@@ -165,125 +103,83 @@ BackstopJS Reference Error: Error encountered during add to cart test for scenar
     at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
     at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
     at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/"
+
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/"
+
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Reference: x Close Browser
 
 BackstopJS Reference: x Close Browser
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Reference: CREATING NEW REFERENCE FILE
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/"
-
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
 
 BackstopJS Reference: x Close Browser
 
 BackstopJS Reference: CREATING NEW REFERENCE FILE
 
-BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+BackstopJS Reference: CREATING NEW REFERENCE FILE
 
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/"
-
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+BackstopJS Reference: CREATING NEW REFERENCE FILE
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
-BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/"
+BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Reference: x Close Browser
-
-BackstopJS Reference: x Close Browser
-
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/"
-
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
 
-BackstopJS Reference: x Close Browser
+BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/"
+BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/"
+
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
     at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
     at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
     at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
@@ -293,15 +189,33 @@ BackstopJS Reference Error: Error encountered during add to cart test for scenar
     at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
     at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
     at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Reference: x Close Browser
+
+BackstopJS Reference: CREATING NEW REFERENCE FILE
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/"
+
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
 
 BackstopJS Reference: x Close Browser
 
-BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/"
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/"
 
-BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
     at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
     at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
     at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
@@ -311,9 +225,89 @@ BackstopJS Reference Error: Error encountered during add to cart test for scenar
     at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
     at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
     at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Reference: CREATING NEW REFERENCE FILE
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/"
+
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/"
+
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Reference: x Close Browser
 
 BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+
+BackstopJS Reference: x Close Browser
+
+BackstopJS Reference: x Close Browser
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Reference: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/"
+
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Reference: x Close Browser
+
+BackstopJS Reference: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/"
+
+BackstopJS Reference Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
 
 BackstopJS Reference: x Close Browser
 
@@ -321,11 +315,11 @@ BackstopJS Reference:
 Run `$ backstop test` to generate diff report.
 
 
-BackstopJS Reference:       COMMAND | Command "reference" successfully executed in [45.738s]
+BackstopJS Reference:       COMMAND | Command "reference" successfully executed in [32.769s]
 
 BackstopJS Test: BackstopJS v6.3.25
 
-BackstopJS Test: Loading config:  /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop-e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd.json 
+BackstopJS Test: Loading config:  /home/mithilesh/TechOps-Automation/backstop-api/backstop-50f471be-b57e-44c2-b846-1c3e6e629a62.json 
 
 
 BackstopJS Test: COMMAND | Executing core for "test"
@@ -342,13 +336,29 @@ BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed
 
 BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
+BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
 BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
 BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/"
+BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/"
+
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
     at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
     at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
     at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
@@ -358,11 +368,11 @@ BackstopJS Test Error: Error encountered during add to cart test for scenario "L
     at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
     at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
     at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
 
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/"
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/"
 
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
     at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
     at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
     at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
@@ -372,142 +382,191 @@ BackstopJS Test Error: Error encountered during add to cart test for scenario "L
     at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
     at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
     at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/"
+
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/"
+
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/"
+
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
 
 BackstopJS Test: x Close Browser
 
-BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
+BackstopJS Test: x Close Browser
 
 BackstopJS Test: x Close Browser
 
-BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
+BackstopJS Test: x Close Browser
 
-BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
+BackstopJS Test: x Close Browser
+
+BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+
+BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
+Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
 BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
 BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
-BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
 
-BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
 
-BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
+
+BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
 
 BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
 
 BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/"
-
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/"
-
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/"
-
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Test: x Close Browser
-
-BackstopJS Test: x Close Browser
-
-BackstopJS Test: x Close Browser
-
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/"
-
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Test: x Close Browser
+BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
 BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/"
+
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/"
+
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/"
+
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/"
+
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/"
+
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
+    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
+    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
+    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
+    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
+    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
+
+BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+
+BackstopJS Test: x Close Browser
+
+BackstopJS Test: x Close Browser
+
+BackstopJS Test: x Close Browser
+
+BackstopJS Test: x Close Browser
+
+BackstopJS Test: x Close Browser
 
 BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
 BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
 
-BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
-
-BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
-
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/"
-
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Test: x Close Browser
-
-BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Test: Browser Console Log 0: JSHandle:JQMIGRATE: Migrate is installed, version 3.4.1
-
-BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
-
 BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
 
 BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
@@ -516,9 +575,9 @@ BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been install
 
 BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
 
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/"
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/"
 
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
     at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
     at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
     at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
@@ -528,17 +587,13 @@ BackstopJS Test Error: Error encountered during add to cart test for scenario "L
     at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
     at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
     at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
 
 BackstopJS Test: x Close Browser
 
-BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
+BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/"
 
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/"
-
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
+BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
     at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
     at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
     at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
@@ -548,110 +603,41 @@ BackstopJS Test Error: Error encountered during add to cart test for scenario "L
     at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
     at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
     at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/"
-
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Test: x Close Browser
-
-BackstopJS Test: x Close Browser
-
-BackstopJS Test: Browser Console Log 0: JSHandle:grecaptcha resetted
-
-BackstopJS Test: Browser Console Log 0: JSHandle:BackstopTools have been installed.
-
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/"
-
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
-
-BackstopJS Test: x Close Browser
-
-BackstopJS Test: Running multi-step flow test. Scenario: "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/"
-
-BackstopJS Test Error: Error encountered during add to cart test for scenario "Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/": ProtocolError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.url - BINDINGS: mandatory field missing at position 50
-    at <instance_members_initializer> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:93:14)
-    at new Callback (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:97:16)
-    at CallbackRegistry.create (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
-    at Connection._rawSend (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:89:26)
-    at CdpCDPSession.send (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
-    at navigate (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:175:51)
-    at CdpFrame.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:153:17)
-    at CdpFrame.<anonymous> (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
-    at CdpPage.goto (/mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:588:43)
-    at module.exports (/home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
-
-BackstopJS Test: Browser Console Log 0: JSHandle:iframe is not visible, so we can't calculate the height
+    at module.exports (/home/mithilesh/TechOps-Automation/backstop-api/backstop_data/engine_scripts/puppet/add-to-cart.js:73:20)
 
 BackstopJS Test: x Close Browser
 
 BackstopJS Test:       COMMAND | Executing core for "report"
 
-BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom__0_document_0_desktop.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_freedom-wholeness__0_document_1_mobile.png
 
-BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom__0_document_1_mobile.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_living-the-new-life__0_document_1_mobile.png
 
-BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_freedom-wholeness__0_document_1_mobile.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/living-the-new-life/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_living-the-new-life__0_document_0_desktop.png
 
-BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_perspective-2__0_document_1_mobile.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_knowing-god__0_document_1_mobile.png
 
-BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_wisdom-of-god__0_document_1_mobile.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_perspective-2__0_document_0_desktop.png
 
-BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_knowing-god__0_document_0_desktop.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom__0_document_0_desktop.png
 
-BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/perspective-2/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_perspective-2__0_document_0_desktop.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_wisdom-of-god__0_document_0_desktop.png
 
-BackstopJS Test:    See: /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/bitmaps_test/20250228-095418/failed_diff_visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_living-the-new-life__0_document_1_mobile.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/freedom-wholeness/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_freedom-wholeness__0_document_0_desktop.png
 
-BackstopJS Test:    See: /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/bitmaps_test/20250228-095418/failed_diff_visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_knowing-god__0_document_1_mobile.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/wisdom-of-god/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_wisdom-of-god__0_document_1_mobile.png
 
-BackstopJS Test:    See: /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/bitmaps_test/20250228-095418/failed_diff_visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_freedom-wholeness__0_document_0_desktop.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom__0_document_1_mobile.png
 
-BackstopJS Test:    See: /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/bitmaps_test/20250228-095418/failed_diff_visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_wisdom-of-god__0_document_0_desktop.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/knowing-god/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_knowing-god__0_document_0_desktop.png
 
-BackstopJS Test:    See: /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/bitmaps_test/20250228-095418/failed_diff_visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_living-the-new-life__0_document_0_desktop.png
-
-BackstopJS Test:       compare | ERROR { requireSameDimensions: true, size: isDifferent, content: 25.70%, threshold: 0.1% }: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_living-the-new-life__0_document_1_mobile.png
-
-BackstopJS Test:       compare | ERROR { requireSameDimensions: true, size: isDifferent, content: 24.99%, threshold: 0.1% }: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/knowing-god/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_knowing-god__0_document_1_mobile.png
-
-BackstopJS Test:       compare | ERROR { requireSameDimensions: true, size: isDifferent, content: 16.08%, threshold: 0.1% }: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/wisdom-of-god/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_wisdom-of-god__0_document_0_desktop.png
-
-BackstopJS Test:       compare | ERROR { requireSameDimensions: true, size: isDifferent, content: 15.76%, threshold: 0.1% }: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/freedom-wholeness/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_freedom-wholeness__0_document_0_desktop.png
-
-BackstopJS Test:       compare | ERROR { requireSameDimensions: true, size: isDifferent, content: 16.13%, threshold: 0.1% }: Logged out Test https://wordpress-1000690-5298643.cloudwaysapps.com/topics/living-the-new-life/ visual_regression_e7ffb733-892a-4f2e-afeb-8c4b3dbaacfd_Logged_out_Test_https__wordpress-1000690-5298643cloudwaysappscom_topics_living-the-new-life__0_document_0_desktop.png
+BackstopJS Test:       compare | OK: Logged out Test https://wordpress-1000690-5314661.cloudwaysapps.com/topics/perspective-2/ visual_regression_50f471be-b57e-44c2-b846-1c3e6e629a62_Logged_out_Test_https__wordpress-1000690-5314661cloudwaysappscom_topics_perspective-2__0_document_1_mobile.png
 
 BackstopJS Test:        report | Test completed...
-       report | 7 Passed
-       report | 5 Failed
-       report | Writing jUnit Report
+       report | 12 Passed
+       report | 0 Failed
+
+BackstopJS Test:        report | Writing jUnit Report
 
 BackstopJS Test:        report | jUnit report written to: backstop_data/ci_report/xunit.xml
 
@@ -659,16 +645,11 @@ BackstopJS Test:        report | Writing browser report
 
 BackstopJS Test:        report | Resources copied
 
-BackstopJS Test:        report | Copied json report to: /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/bitmaps_test/20250228-095418/report.json
+BackstopJS Test:        report | Copied json report to: /home/mithilesh/TechOps-Automation/backstop-api/backstop_data/bitmaps_test/20250307-043421/report.json
 
-BackstopJS Test:        report | Copied jsonp report to: /home/mithilesh/TechOps/TechOps-Automation/backstop-api/backstop_data/html_report/config.js
-       report | *** Mismatch errors found ***
+BackstopJS Test:        report | Copied jsonp report to: /home/mithilesh/TechOps-Automation/backstop-api/backstop_data/html_report/config.js
 
-BackstopJS Test:       COMMAND | Command "report" ended with an error after [4.53s]
+BackstopJS Test:       COMMAND | Command "report" successfully executed in [1.638s]
 
-BackstopJS Test:       COMMAND | Error: Mismatch errors found.
-                    at /mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/core/command/report.js:284:17
-      COMMAND | Command "test" ended with an error after [46.29s]
-      COMMAND | Error: Mismatch errors found.
-                    at /mnt/c/Users/misuc/AppData/Roaming/npm/node_modules/backstopjs/core/command/report.js:284:17
+BackstopJS Test:       COMMAND | Command "test" successfully executed in [33.254s]
 
