@@ -518,11 +518,23 @@ sshpass -p "$STAGING_PASSWORD" ssh -o StrictHostKeyChecking=no -p "$STAGING_PORT
     
 echo ""
 echo "Fetching initial plugin counts..."
-initial_active_plugins=$(wp plugin list --status=active --field=name | wc -l)
-initial_total_plugins=$(wp plugin list --field=name | wc -l)
 
-echo "Active plugins before update: $initial_active_plugins"
-echo "Total plugins before update: $initial_total_plugins"
+########################################
+# Capture initial plugin lists by type
+########################################
+
+# Note: "All Plugins" here excludes must-use and dropins by filtering on active and inactive.
+initial_active_plugins_list=($(wp plugin list --status=active --field=name --quiet))
+initial_all_plugins_list=($(wp plugin list --status=active,inactive --field=name --quiet))
+initial_mu_plugins_list=($(wp plugin list --status=must-use --field=name --quiet))
+initial_dropins_list=($(wp plugin list --status=dropin --field=name --quiet))
+
+echo ""
+echo "Initial Plugin Counts:"
+echo "Active plugins - ${#initial_active_plugins_list[@]}"
+echo "All Plugins (active & inactive) - ${#initial_all_plugins_list[@]}"
+echo "Must Use Plugins - ${#initial_mu_plugins_list[@]}"
+echo "Dropins - ${#initial_dropins_list[@]}"
 echo ""
 
 ########################################
@@ -582,19 +594,91 @@ else
   fi
 fi
 
-final_active_plugins=$(wp plugin list --status=active --field=name | wc -l)
-final_total_plugins=$(wp plugin list --field=name | wc -l)
+########################################
+# After updates, capture the final plugin lists by type
+########################################
+
+final_active_plugins_list=($(wp plugin list --status=active --field=name --quiet))
+final_all_plugins_list=($(wp plugin list --status=active,inactive --field=name --quiet))
+final_mu_plugins_list=($(wp plugin list --status=must-use --field=name --quiet))
+final_dropins_list=($(wp plugin list --status=dropin --field=name --quiet))
 
 echo ""
 echo "Final Plugin Counts:"
-echo "Active plugins after update: $final_active_plugins"
-echo "Total plugins after update: $final_total_plugins"
+echo "Active plugins - ${#final_active_plugins_list[@]}"
+echo "All Plugins (active & inactive) - ${#final_all_plugins_list[@]}"
+echo "Must Use Plugins - ${#final_mu_plugins_list[@]}"
+echo "Dropins - ${#final_dropins_list[@]}"
+echo ""
 
-if [[ $final_total_plugins -lt $initial_total_plugins ]]; then
-    echo "Warning: Some plugins may have been removed during the update!"
-    wp plugin list --field=name > plugin_list_after_update.txt
-    echo "A list of current plugins has been saved to plugin_list_after_update.txt"
+########################################
+# Function to compare arrays: returns items in first array not present in second
+########################################
+function array_diff() {
+    local -n arr1=$1
+    local -n arr2=$2
+    local diff=()
+    for item in "${arr1[@]}"; do
+        local found=0
+        for comp in "${arr2[@]}"; do
+            if [[ "$item" == "$comp" ]]; then
+                found=1
+                break
+            fi
+        done
+        if [ $found -eq 0 ]; then
+            diff+=("$item")
+        fi
+    done
+    echo "${diff[@]}"
+}
+
+########################################
+# Compute deleted plugins for each category
+########################################
+
+deleted_active_plugins=($(array_diff initial_active_plugins_list final_active_plugins_list))
+deleted_all_plugins=($(array_diff initial_all_plugins_list final_all_plugins_list))
+deleted_mu_plugins=($(array_diff initial_mu_plugins_list final_mu_plugins_list))
+deleted_dropins=($(array_diff initial_dropins_list final_dropins_list))
+
+########################################
+# Print deleted plugins categorized by type
+########################################
+
+if [ ${#deleted_active_plugins[@]} -gt 0 ]; then
+    echo "Deleted Active Plugins -"
+    for plugin in "${deleted_active_plugins[@]}"; do
+        echo "$plugin"
+    done
 fi
+
+if [ ${#deleted_dropins[@]} -gt 0 ]; then
+    echo ""
+    echo "Deleted Dropin Plugin -"
+    for plugin in "${deleted_dropins[@]}"; do
+        echo "$plugin"
+    done
+fi
+
+if [ ${#deleted_mu_plugins[@]} -gt 0 ]; then
+    echo ""
+    echo "Deleted Must Use Plugin -"
+    for plugin in "${deleted_mu_plugins[@]}"; do
+        echo "$plugin"
+    done
+fi
+
+if [ ${#deleted_all_plugins[@]} -gt 0 ]; then
+    echo ""
+    echo "Deleted All Plugins (active & inactive) -"
+    for plugin in "${deleted_all_plugins[@]}"; do
+        echo "$plugin"
+    done
+fi
+
+echo ""
+echo "Comparison complete."
 
 ########################################
 # Update Themes if Updates Are Available
