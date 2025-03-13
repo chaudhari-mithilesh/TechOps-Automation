@@ -516,7 +516,6 @@ sshpass -p "$STAGING_PASSWORD" ssh -o StrictHostKeyChecking=no -p "$STAGING_PORT
     # fi
     
     
-# Step 13: Dry run update of plugins and themes with exceptions for failed plugins
 echo ""
 echo "Fetching initial plugin counts..."
 initial_active_plugins=$(wp plugin list --status=active --field=name | wc -l)
@@ -526,34 +525,63 @@ echo "Active plugins before update: $initial_active_plugins"
 echo "Total plugins before update: $initial_total_plugins"
 echo ""
 
-echo "Dry run update of all plugins..."
-failed_plugins=()
-
-while IFS= read -r plugin_name; do
-    if ! wp plugin update "$plugin_name" --dry-run --quiet; then
-        echo "Plugin update dry run failed for $plugin_name. Skipping from batch update..."
-        failed_plugins+=("$plugin_name")
-    fi
-done < <(wp plugin list --field=name --status=active)
-
-# Update all plugins except the failed ones in the dry run
-if [[ ${#failed_plugins[@]} -gt 0 ]]; then
-    echo "Some plugins failed during dry run. Updating remaining plugins..."
-    wp plugin update $(wp plugin list --field=name --status=active --quiet | grep -v -F "$(printf '%s\n' "${failed_plugins[@]}")")
+########################################
+# Update Plugins if Updates Are Available
+########################################
+echo "Checking for available plugin updates..."
+plugins_to_update=($(wp plugin list --update=available --field=name --quiet))
+if [ ${#plugins_to_update[@]} -eq 0 ]; then
+  echo "No plugin updates available."
 else
-    echo "All plugins passed dry run. Proceeding with updates..."
-    wp plugin update --all --quiet
+  echo "Plugins with available updates: ${plugins_to_update[@]}"
+  echo "Starting iterative update of plugins..."
+  failed_plugins=()
+  active_plugins=("${plugins_to_update[@]}")
+  
+  while true; do
+      progress=0
+      remaining_plugins=()
+      
+      for plugin in "${active_plugins[@]}"; do
+           echo "Performing dry run for plugin: $plugin"
+           if wp plugin update "$plugin" --dry-run --quiet; then
+               echo "Dry run successful for $plugin. Attempting update..."
+               if wp plugin update "$plugin" --quiet; then
+                   echo "Plugin $plugin updated successfully."
+                   progress=1
+               else
+                   echo "Actual update failed for $plugin. It might be waiting on dependent plugins."
+                   remaining_plugins+=("$plugin")
+               fi
+           else
+               echo "Dry run failed for $plugin. Likely due to dependency issues."
+               remaining_plugins+=("$plugin")
+           fi
+      done
+
+      if [ ${#remaining_plugins[@]} -eq 0 ]; then
+           echo "All plugins updated successfully."
+           break
+      fi
+
+      if [ $progress -eq 0 ]; then
+           echo "No further progress could be made updating the following plugins:"
+           printf '  %s\n' "${remaining_plugins[@]}"
+           failed_plugins=("${remaining_plugins[@]}")
+           break
+      fi
+
+      active_plugins=("${remaining_plugins[@]}")
+      echo "Retrying updates for remaining plugins..."
+      echo ""
+  done
+
+  if [[ ${#failed_plugins[@]} -gt 0 ]]; then
+      echo "The following plugins could not be updated:"
+      printf '  %s\n' "${failed_plugins[@]}"
+  fi
 fi
 
-# Attempt updates for plugins that failed the dry run
-# if [[ ${#failed_plugins[@]} -gt 0 ]]; then
-#     echo "Attempting to update previously failed plugins individually..."
-#     for plugin in "${failed_plugins[@]}"; do
-#         wp plugin update --quiet "$plugin" || echo "Failed to update $plugin, skipping..."
-#     done
-# fi
-
-# Get final plugin counts
 final_active_plugins=$(wp plugin list --status=active --field=name | wc -l)
 final_total_plugins=$(wp plugin list --field=name | wc -l)
 
@@ -562,40 +590,69 @@ echo "Final Plugin Counts:"
 echo "Active plugins after update: $final_active_plugins"
 echo "Total plugins after update: $final_total_plugins"
 
-# Check if any plugins were removed
 if [[ $final_total_plugins -lt $initial_total_plugins ]]; then
     echo "Warning: Some plugins may have been removed during the update!"
     wp plugin list --field=name > plugin_list_after_update.txt
     echo "A list of current plugins has been saved to plugin_list_after_update.txt"
 fi
 
+########################################
+# Update Themes if Updates Are Available
+########################################
 echo ""
-echo "Updating themes..."
-failed_themes=()
-
-while IFS= read -r theme_name; do
-    if ! wp theme update "$theme_name" --dry-run --quiet; then
-        echo "Theme update dry run failed for $theme_name. Skipping from batch update..."
-        failed_themes+=("$theme_name")
-    fi
-done < <(wp theme list --field=name --status=active)
-
-# Update all themes except the failed ones in the dry run
-if [[ ${#failed_themes[@]} -gt 0 ]]; then
-    echo "Some themes failed during dry run. Updating remaining themes..."
-    wp theme update $(wp theme list --field=name --status=active --quiet | grep -v -F "$(printf '%s\n' "${failed_themes[@]}")")
+echo "Checking for available theme updates..."
+themes_to_update=($(wp theme list --update=available --field=name --quiet))
+if [ ${#themes_to_update[@]} -eq 0 ]; then
+  echo "No theme updates available."
 else
-    echo "All themes passed dry run. Proceeding with updates..."
-    wp theme update --all --quiet
-fi
+  echo "Themes with available updates: ${themes_to_update[@]}"
+  echo "Starting iterative update of themes..."
+  failed_themes=()
+  active_themes=("${themes_to_update[@]}")
+  
+  while true; do
+      progress=0
+      remaining_themes=()
+      
+      for theme in "${active_themes[@]}"; do
+           echo "Performing dry run for theme: $theme"
+           if wp theme update "$theme" --dry-run --quiet; then
+               echo "Dry run successful for $theme. Attempting update..."
+               if wp theme update "$theme" --quiet; then
+                   echo "Theme $theme updated successfully."
+                   progress=1
+               else
+                   echo "Actual update failed for $theme. It will be retried."
+                   remaining_themes+=("$theme")
+               fi
+           else
+               echo "Dry run failed for $theme."
+               remaining_themes+=("$theme")
+           fi
+      done
 
-# Attempt updates for themes that failed the dry run
-# if [[ ${#failed_themes[@]} -gt 0 ]]; then
-#     echo "Attempting to update previously failed themes individually..."
-#     for theme in "${failed_themes[@]}"; do
-#         wp theme update "$theme" || echo "Failed to update $theme, skipping..."
-#     done
-# fi
+      if [ ${#remaining_themes[@]} -eq 0 ]; then
+           echo "All themes updated successfully."
+           break
+      fi
+
+      if [ $progress -eq 0 ]; then
+           echo "No further progress could be made updating the following themes:"
+           printf '  %s\n' "${remaining_themes[@]}"
+           failed_themes=("${remaining_themes[@]}")
+           break
+      fi
+
+      active_themes=("${remaining_themes[@]}")
+      echo "Retrying updates for remaining themes..."
+      echo ""
+  done
+
+  if [[ ${#failed_themes[@]} -gt 0 ]]; then
+      echo "The following themes could not be updated:"
+      printf '  %s\n' "${failed_themes[@]}"
+  fi
+fi
 
 echo ""
 echo "Updates completed."
