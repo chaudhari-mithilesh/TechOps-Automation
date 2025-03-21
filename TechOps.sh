@@ -980,7 +980,7 @@ visual_regression_full_run(){
 
 			# Build JSON payload using a heredoc.
 # The commented lines are preserved here for reference.
-PAYLOAD_KEY="staging_payload"
+PAYLOAD_KEY="live_payload"
 PAYLOAD=$(jq -c ".${PAYLOAD_KEY}" payload.json)
 
 echo "Sending job creation request to http://localhost:3000/api/visual-regression..."
